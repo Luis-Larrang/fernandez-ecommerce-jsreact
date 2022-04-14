@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';*/
+import logo from "./components/NavBar/logo.png"
 import './App.css';
 
 import NavBar from "./components/NavBar/NavBar"

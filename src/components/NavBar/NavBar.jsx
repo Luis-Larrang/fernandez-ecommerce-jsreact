@@ -1,12 +1,12 @@
 import React from 'react';
 import "./estios.css"
-import "./logo.png"
+import logo from "./logo.png"
 
 function NavBar(props) {
     return (
         <div className="nav">
-            <img src="logo.png" alt="logo" />
-            <h1>Empresa X</h1>
+            <img src={logo} alt="logo" height={50} className="logo" />
+            <h1 className='nombreEmpresa'>Empresa X</h1>
             <ul className="navSecciones">                
                 <a href="#" className="navSecciones">Carnes</a>
                 <a href="#" className="navSecciones">Verduras</a>
