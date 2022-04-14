@@ -4,7 +4,8 @@ import logo from "./logo.png"
 
 function NavBar(props) {
     return (
-        <>
+        //NAVBAR BOOTSTRAP
+        <>  
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#"><img src={logo} alt="logo"/>Mercado X</a>
@@ -34,7 +35,8 @@ function NavBar(props) {
             </div>
         </nav>            
             </>
-            /*<div className="nav">
+            /*NAVBAR CON CSS
+            <div className="nav">
                 <img src={logo} alt="logo" height={50} className="logo" />
                 <h1 className='nombreEmpresa'>Empresa X</h1>
                 <ul className="navSecciones">                
