@@ -15,16 +15,16 @@ function NavBar(props) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Carnes</a>
+                    <a class="nav-link active" aria-current="page" href="/" target='_blank'>Carnes</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Verduras</a>
+                    <a class="nav-link active" aria-current="page" href="/" target='_blank'>Verduras</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Farmacia</a>
+                    <a class="nav-link active" aria-current="page" href="/" target='_blank'>Farmacia</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Bebidas</a>
+                    <a class="nav-link active" aria-current="page" href="/" target='_blank'>Bebidas</a>
                     </li>            
                 </ul>
                 <form class="d-flex">
