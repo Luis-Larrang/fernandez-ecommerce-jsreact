@@ -1,14 +1,16 @@
-/*import logo from './logo.svg';*/
-
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
-import NavBar from "./components/NavBar/NavBar"
+import NavBar from "./components/NavBar/NavBar";
+import CartWidget from"./components/CartWidget/CartWidget"
+import ItemListContainer from"./components/ItemListContainer/ItemListContainer"
+import Counter from"./components/Counter/Counter"
+
+
 
 function App() {
   return (    
-    <NavBar />    
-  );
+     <><NavBar/>
+      <Counter /></>    
+  );  
 }
 
 export default App;
