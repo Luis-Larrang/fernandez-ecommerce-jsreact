@@ -1,10 +1,12 @@
 import React from "react";
-import "./estilos.css"
+import "./itemListContainer.css"
 
-function itemListContainer(params) {
+function itemListContainer({greeting}) {
     return (
         <>
-            
+            <div className="fondo">
+                <p className="tipografia">{greeting}</p>
+            </div>
         </>
     );
 }

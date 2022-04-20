@@ -1,6 +1,7 @@
 import React from 'react';
-import "./estios.css"
+import "./navBar.css"
 import logo from "./logo.png"
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(props) {
     return (
@@ -26,26 +27,12 @@ function NavBar(props) {
                     <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="/" target='_blank'>Bebidas</a>
                     </li>            
-                </ul>
-                <form className="d-flex">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                </div>
-            </div>
-        </nav>            
-            </>
-            /*NAVBAR CON CSS
-            <div className="nav">
-                <img src={logo} alt="logo" height={50} className="logo" />
-                <h1 className='nombreEmpresa'>Empresa X</h1>
-                <ul className="navSecciones">                
-                    <a href="#" className="navSecciones">Carnes</a>
-                    <a href="#" className="navSecciones">Verduras</a>
-                    <a href="#" className="navSecciones">Farmacia</a>
-                    <a href="#" className="navSecciones">Bebidas</a>
-                </ul>           
-            </div>*/
+                </ul>   
+                <CartWidget/>
+                </div>            
+            </div>            
+        </nav>                
+     </>            
     );
 }
 

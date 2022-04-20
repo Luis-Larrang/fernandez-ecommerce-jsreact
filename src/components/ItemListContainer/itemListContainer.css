@@ -1,0 +1,11 @@
+.fondo{
+    background-color: blanchedalmond;
+    background-size: cover;
+    height: 100vh;
+    
+}
+.tipografia{
+    color: black;
+    text-align: center;
+    font-size: 10rem;    
+}

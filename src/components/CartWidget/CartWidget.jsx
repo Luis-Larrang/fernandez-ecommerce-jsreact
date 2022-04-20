@@ -1,12 +1,11 @@
 import React from "react";
-import "./estilos.css"
+import "./cartWidget.css"
+import carrito from "./carrito.png"
 
-function cartWidget(params) {
-    return (
-        <>
-            
-        </>
+const CartWidget = () => {
+    return (        
+          <img src="carrito" alt="carrito"/>         
     );
 }
 
-export default cartWidget;
+export default CartWidget;
