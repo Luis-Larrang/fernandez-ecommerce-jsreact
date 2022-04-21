@@ -1,9 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from"./components/ItemListContainer/ItemListContainer"
-//import Counter from"./components/Counter/Counter"
-
-
 
 function App() {
   return (    
@@ -12,5 +9,5 @@ function App() {
       </>    
   );  
 }
-//<Counter />
+
 export default App;

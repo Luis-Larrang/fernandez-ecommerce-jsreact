@@ -1,11 +1,11 @@
+//IMPORT
 import React from 'react';
 import "./navBar.css"
 import logo from "./logo.png"
 import CartWidget from '../CartWidget/CartWidget';
-
+//FUNCTION
 function NavBar(props) {
-    return (
-        //NAVBAR BOOTSTRAP
+    return (        
         <>  
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
@@ -35,5 +35,5 @@ function NavBar(props) {
      </>            
     );
 }
-
+//EXPORT
 export default NavBar;
