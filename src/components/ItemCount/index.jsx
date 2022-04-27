@@ -24,7 +24,7 @@ function ItemCounter({stock, initial, onAdd}) {
                     <input readOnly value={count} className="mx-3"></input>
                     <button type="button" className="btn btn-danger col-1" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" /></button>
                 </div>
-                <button className="offset-5" onClick={()=>(count <= stock) && onAdd()}>Agregar al carrito</button>
+                <button className="offset-5 mt-3" onClick={()=>(count <= stock) && onAdd()}>Agregar al carrito</button>
             </div>                            
         </>
     );

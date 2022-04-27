@@ -16,16 +16,16 @@ function NavBar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/" target='_blank'>Carnes</a>
+                    <a className="nav-link active" aria-current="page" href="/" >Carnes</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/" target='_blank'>Verduras</a>
+                    <a className="nav-link active" aria-current="page" href="/" >Verduras</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/" target='_blank'>Farmacia</a>
+                    <a className="nav-link active" aria-current="page" href="/" >Farmacia</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/" target='_blank'>Bebidas</a>
+                    <a className="nav-link active" aria-current="page" href="/" >Bebidas</a>
                     </li>            
                 </ul>   
                 <CartWidget/>
