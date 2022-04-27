@@ -10,21 +10,21 @@ function getProducts() {
         const productsList = [
             {
                 id: 1,
-                title: 'Batman',
-                price: '$450',
-                imageUrl: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/001/184/069/products/batman80anivol191-5a4d6411b2ef55dd1315908772450482-480-0.jpg'
+                title: 'Item 1',
+                price: '$125',
+                imageUrl: 'https://images.app.goo.gl/mHmeUfGYL6P55xBr8'
               },
               {
                 id: 2,
-                title: 'Superman',
-                price: '$600',
-                imageUrl: 'https://www.ecccomics.com/content/productos/10036/Superman_109_30_1a_cubierta_CORR.jpg'
+                title: 'Item 2',
+                price: '$1000',
+                imageUrl: 'https://images.app.goo.gl/CEKMdJceD15oepJ66'
               },
               {
                 id: 3,
-                title: 'Flash',
-                price: '$350',
-                imageUrl: 'https://www.ecccomics.com/content/productos/5447/Flash_28.jpg'
+                title: 'Item 3',
+                price: '$200',
+                imageUrl: 'https://images.app.goo.gl/gUyHyJADb4AftGsk6'
               }
         ];
         setTimeout(()=>{
