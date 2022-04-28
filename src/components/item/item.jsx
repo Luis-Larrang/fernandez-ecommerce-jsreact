@@ -1,28 +1,19 @@
 import React from "react"
-import bootstrap from "bootstrap";
+import { Card, Button } from "react-bootstrap";
+import "./item.css"
 
 function Item({item}){
-    return(
-        <div className='card'>
-            <div className='header'>{ item?.title }</div>
-            <div className='content'>
-                <div className='img-container'>
-                    <img className='product-img' src={ item?.imageUrl } alt="Imagen del producto" />
-                </div>
-            </div>
-            <div className='footer'>{ item?.price }</div>
-        </div>
-    //ABAJO ESTA MI INTENTO DE USAR LAS CARDS DE BOOTSTRAP
-       /* <div>
-            <div className="card" style="width: 18rem;">
-                <img src={item?.imageUrl} class="card-img-top" alt="img del producto" />
-                <div className="card-body">
-                    <div className="card-title">{item?.title}</div>                    
-                    <div className="card-text">Precio: {item?.price}</div>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>*/
+    return(   
+            <Card className="margen" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={ item?.imageUrl } alt="Imagen del producto" />
+                <Card.Body>
+                <Card.Title>{ item?.title }</Card.Title>
+                <Card.Text>
+                    Precio: { item?.price }
+                </Card.Text>
+                <Button variant="primary">Agregar al carrito</Button>
+                </Card.Body>
+            </Card>     
     )      
 }
 
