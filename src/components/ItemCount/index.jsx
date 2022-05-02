@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import logoMas from "./plus.png"
 import logoMenos from "./minus-button.png"
+import "./itemCount.css"
 
 //FUNCTIONS
 function ItemCounter({stock, initial, onAdd}) {     
@@ -19,12 +20,12 @@ function ItemCounter({stock, initial, onAdd}) {
     return (
         <>   
             <div className="item-count-container">
-                <div>
-                    <button type="button" className="btn btn-success offset-4 col-1" onClick={()=>sumarAlCarrito()}><img src={logoMas} alt="logoMas" /></button>
-                    <input readOnly value={count} className="mx-3"></input>
-                    <button type="button" className="btn btn-danger col-1" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" /></button>
+                <div>                    
+                    <input readOnly value={count} className="margenInput"></input> <hr/>
+                    <button type="button" className="btn btn-success margen " onClick={()=>sumarAlCarrito()}><img src={logoMas} alt="logoMas" /></button>
+                    <button type="button" className="btn btn-danger margen" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" /></button>
                 </div>
-                <button className="offset-5 mt-3" onClick={()=>(count <= stock) && onAdd()}>Agregar al carrito</button>
+                <button className="offset-4 margenAgregar" onClick={()=>(count <= stock) && onAdd()}>Agregar al carrito</button>
             </div>                            
         </>
     );
