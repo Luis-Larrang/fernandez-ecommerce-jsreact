@@ -1,33 +1,27 @@
 .nav {
-    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    justify-content: flex-start;
-    background-color: azure;
-    color: brown;
-    border: solid 2px aquamarine;
-    border-radius: 0px 0px 25px 25px;
-}
-.nombreEmpresa{
-    margin-left: 35rem;
-    margin-right: 15rem;
-}
-.logo{
-    padding: 1rem;
-}
-.navSecciones{
     display: flex;
-    list-style-type: none;    
-    background-color: azure;
-    color: brown;    
-    border-radius: 25px 25px 25px 25px;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
 }
-.nav a{    
-    padding: 15px;
+
+.nav li a {
+    padding: 10px;
+    cursor: pointer;
+    font-size: large;
     text-decoration: none;
     color: brown;
-    border: solid 2px rebeccapurple;
-    margin-left: 10px;
-    margin-right: 10px;
+    text-decoration: none;
 }
+
+.nav li a:hover {
+    font-size: larger;
+}
+
+.nav-active {
+    font-weight: bold;
+}
+

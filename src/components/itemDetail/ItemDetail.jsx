@@ -18,33 +18,11 @@ function ItemDetail({item}) {
                         Precio: {item?.price}
                     </p>
                     <div className="offset-1 margenTop col-6">
-                        <ItemCounter initial={0} stock={10} onAdd={()=>{}}/>
+                        <ItemCounter initial={0} stock={item.stock} onAdd={()=>{}}/>
                     </div>
                 </Col>
             </Row>
         </Container>
-
-        /*<div className="col-8 offset-2">
-            <div className="margenTop">
-                <div className="margenTop">
-                    <img src={item?.imageUrl} alt="img producto"/>
-                </div>
-            </div>
-            <div className="margenTop">
-                <div className="margenTop">
-                    <h3 className="margenTop">
-                        {item?.title}
-                    </h3>
-                    <p className="margenTop">
-                        {item?.price}
-                    </p>
-                    <div className="margenTop">
-                        <ItemCounter initial={0} stock={10} onAdd={()=>{}}/>
-                    </div>
-                </div>
-            </div>
-        </div>*/
-
     );
 }
 

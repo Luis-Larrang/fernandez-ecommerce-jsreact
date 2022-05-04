@@ -1,5 +1,6 @@
 import React from "react"
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./item.css"
 
 function Item({item}){
@@ -10,8 +11,12 @@ function Item({item}){
                 <Card.Title>{ item?.title }</Card.Title>
                 <Card.Text>
                     Precio: { item?.price }
-                </Card.Text>
-                <Button variant="primary">Agregar al carrito</Button>
+                </Card.Text>                
+                <Button variant="success" className="centradoBoton">
+                    <Link to={"/item/" + item?.id} className="estilo">
+                        Ver detalle
+                    </Link>
+                </Button>
                 </Card.Body>
             </Card>     
     )      

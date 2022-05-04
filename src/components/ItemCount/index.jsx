@@ -21,9 +21,9 @@ function ItemCounter({stock, initial, onAdd}) {
         <>   
             <div className="item-count-container">
                 <div>                    
-                    <input readOnly value={count} className="margenInput"></input> <hr/>
-                    <button type="button" className="btn btn-success margen " onClick={()=>sumarAlCarrito()}><img src={logoMas} alt="logoMas" /></button>
-                    <button type="button" className="btn btn-danger margen" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" /></button>
+                    <input readOnly value={count} className="margenInput ajustesInput"></input>
+                    <button type="button" className="btn btn-success margen " onClick={()=>sumarAlCarrito()}><img src={logoMas} alt="logoMas"className="ajusteImgBoton"/></button>
+                    <button type="button" className="btn btn-danger margen" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" className="ajusteImgBoton"/></button>
                 </div>
                 <button className="offset-4 margenAgregar" onClick={()=>(count <= stock) && onAdd()}>Agregar al carrito</button>
             </div>                            
