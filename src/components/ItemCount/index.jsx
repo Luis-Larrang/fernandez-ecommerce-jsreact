@@ -1,10 +1,8 @@
-//IMPORTS
 import React, {useState} from "react";
 import logoMas from "./plus.png"
 import logoMenos from "./minus-button.png"
 import "./itemCount.css"
 
-//FUNCTIONS
 function ItemCounter({stock, initial, onAdd}) {     
     const [count, setCount] = useState(initial);
     function sumarAlCarrito() {
@@ -30,5 +28,5 @@ function ItemCounter({stock, initial, onAdd}) {
         </>
     );
 }  
-//EXPORTS
+
 export default ItemCounter;

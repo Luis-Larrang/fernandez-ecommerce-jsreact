@@ -6,7 +6,7 @@ import "./item.css"
 function Item({item}){
     return(   
             <Card className="margen" style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={ item?.imageUrl } alt="Imagen del producto" />
+                <Card.Img variant="top" src={ item?.imageUrl } alt="Imagen del producto" style={{ height: '15rem' }} />
                 <Card.Body>
                 <Card.Title>{ item?.title }</Card.Title>
                 <Card.Text>

@@ -8,12 +8,15 @@ function ItemDetail({item}) {
         <Container>
             <Row className="justify-content-md-center">
                 <Col>
-                <img src={item?.imageUrl} alt="img producto" className="anchoImg offset-4 separador"/>
+                <img src={item?.imageUrl} alt="img producto" className="anchoImg offset-4"/>
                 </Col>
-                <Col>    
+                <Col className="separador">    
                     <h3 className="offset-3 margenTop">
                         {item?.title}
                     </h3>
+                    <p className="offset-3 margenTop">
+                        Descripcion: {item?.descripcion}
+                    </p>
                     <p className="offset-3 margenTop">
                         Precio: {item?.price}
                     </p>

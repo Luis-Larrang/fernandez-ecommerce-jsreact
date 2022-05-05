@@ -2,8 +2,10 @@
     margin-top: 3rem;
 }
 .anchoImg{
-    width: 70%;
+    padding-top: 3rem;
+    width: 60%;        
 }
 .separador{
-    border-right: solid black 3px;
+    border-left: solid black 3px;
+    height: 90vh;
 }

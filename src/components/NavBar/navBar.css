@@ -1,13 +1,30 @@
-
-
-.nav a {
-    padding: 5px;    
-    text-decoration: none;
-    color: black;
-    text-decoration: none;
+.nav-container {
+    background-color: rgb(173, 127, 181);
+    display: flex;
+    justify-content: space-between;
+    height: 2.4rem;
+    border-radius: 0px 0px 50px 50px / 0px 0px 25px 25px;   
 }
 
-.nav a:hover {
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;       
+}
+
+.nav li a {
+    padding: 10px;
+    cursor: pointer;
+    font-size: large;
+    text-decoration: none;
+    color: rgb(255, 255, 255);    
+}
+
+.nav li a:hover {
     font-size: larger;
 }
 
@@ -15,3 +32,13 @@
     font-weight: bold;
 }
 
+.logo {    
+    height: 85%;
+    margin-left: 3rem;
+    margin-top: 0.1rem;
+}
+.carrito{
+    height: 85%;
+    margin-right: 3rem;
+    margin-top: 0.1rem;
+}

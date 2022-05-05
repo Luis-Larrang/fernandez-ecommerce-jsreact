@@ -9,12 +9,7 @@ function ItemList({items}) {
                 {items.map(item=> <Item item={item} key={item.id} />)}           
             </Stack> 
         </Container>
-    )
-    /*return(
-        <div className="item-list">
-            {items.map(item=> <Item item={item} key={item.id} />)}
-        </div>
-    )*/
+    )    
 }
 
 export default ItemList;
