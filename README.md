@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Componentes para crear un e-commerce.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El objetivo de este trabajo es generar las bases para un e-commerce que se pueda adaptar a la carga de listado de productos de cada caso. Con dicho fin se generaron distintos componentes individuales que al sumarse generan una app funcional. Del mismo modo esos componentes individuales aseguran que cualquiera que trabaje con los mismos pueda ponerle su impronta propia.
 
-## Available Scripts
+## Descargar la App
 
-In the project directory, you can run:
+Descargar el repositorio de (https://github.com/Luis-Larrang/fernandez-ecommerce-jsreact.git) y utilizar el comando de consola "npm start" para correr la App.
 
-### `npm start`
+### Prerrequisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Requirements for the software and other tools to build, test and push 
+- [React](https://www.example.com)
+- [Bootstrap-react](https://es.reactjs.org/)
+- [react-router-dom.](https://reactrouter.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Instalación
 
-### `npm test`
+Para poder hacer uso y modificaciones en la App es necesario.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instalar la dependencia react.
 
-### `npm run build`
+  Utilizar la consola e ingresar el siguiente comando: npx create-react-app my-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Instalar la dependencia Bootstrap-react.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Utilizar la consola e ingresar el siguiente comando: npm install react-bootstrap bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Instalar dependencia react-router-dom.
 
-### `npm run eject`
+  Utilizar la consola e ingresar el siguiente comando: npm install react-router-dom
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Correr la App.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Una vez todas las dependecnias esten instaladas es posible iniciar la App mediante el comando de consola: npm start.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Detalle de los componentes y su funcionalidad.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  ### Navbar.
 
-## Learn More
+    En el componente NavBar se utilizó css ya que la dependencia de bootstrap generó un conflicto con la dependencia de react-router-dom, la que no permitía hacer modificaciones estéticas sobre los <NavLinks>. Esto está sujeto a revisión y puede ser modificado en futuras iteraciones.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ### Item, Item detail, Item list.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Dentro de estos componentes se utilizó la dependencia Bootstrap para lograr agilizar el proceso de diseño y simplificar modificaciones requeridas según los items a reflejar en la App.
 
-### Code Splitting
+  ### Item list container e Item detail container.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Dentro de los componentes “ItemListContainer” e “ItemDetailContainer” se trabajó utilizando la función “getProducts()” y “getItem()” con promesas y filtros los cuales son usados por la función “ItemListContainer()” e “ItemDetailContainer()”, que incluyen la función useState de react, para poder reflejar los items deseados en el dom. En el primer caso utilizando “category” como referencia y en el segundo “id”.
 
-### Analyzing the Bundle Size
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  - **Luis Fernandez** - *Desarrollo integral de la App* -
+    [Luis-Larrang](https://github.com/Luis-Larrang)
 
-### Making a Progressive Web App
+## Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Trabajo de indole educativo: uso libre.
 
-### Advanced Configuration
+## Agradecimeintos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Diego Medina [Profesor]
+  - Ailin Nakaganeku [Tutora]
