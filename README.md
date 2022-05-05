@@ -15,17 +15,17 @@ Requirements for the software and other tools to build, test and push
 
 ### Instalación
 
-Para poder hacer uso y modificaciones en la App es necesario.
+Para poder hacer uso y modificaciones en la App es necesario:
 
-Instalar la dependencia react.
+#### Instalar la dependencia react.
 
   Utilizar la consola e ingresar el siguiente comando: npx create-react-app my-app
 
-Instalar la dependencia Bootstrap-react.
+#### Instalar la dependencia Bootstrap-react.
 
   Utilizar la consola e ingresar el siguiente comando: npm install react-bootstrap bootstrap
 
-Instalar dependencia react-router-dom.
+#### Instalar dependencia react-router-dom.
 
   Utilizar la consola e ingresar el siguiente comando: npm install react-router-dom
 
