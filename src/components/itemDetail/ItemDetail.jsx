@@ -2,8 +2,14 @@ import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import ItemCounter from "../ItemCount";
 import "./itemDetail.css"
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function ItemDetail({item}) {
+    const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
+    function gestorDeCantidades(cantidadParaSumar) {
+        setCantidadDeProductos(cantidadParaSumar);
+    }
     return (
         <Container>
             <Row className="justify-content-md-center">
@@ -21,7 +27,9 @@ function ItemDetail({item}) {
                         Precio: {item?.price}
                     </p>
                     <div className="offset-1 margenTop col-6">
-                        <ItemCounter initial={0} stock={item.stock} onAdd={()=>{}}/>
+                        {cantidadDeProductos ?
+                        <button><Link to="/cart">Finalizar compra ({cantidadDeProductos} unidades)</Link></button>:
+                        <ItemCounter initial={0} stock={item.stock} onAdd={gestorDeCantidades}/>}                        
                     </div>
                 </Col>
             </Row>
