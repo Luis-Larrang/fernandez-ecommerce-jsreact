@@ -29,9 +29,8 @@ function getProducts(category) {
               }
         ];
         const filtroProductos = category ? productsList.filter(p => p.category === category) : productsList;
-        setTimeout(()=>{                           
-            resolve(filtroProductos);
-        }, 2000);
+        resolve(filtroProductos);
+       
     });
     return promesa;
 }

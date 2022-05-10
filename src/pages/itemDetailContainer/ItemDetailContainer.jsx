@@ -31,10 +31,9 @@ function getItem(id) {
               } 
             ]               
         ;
-        const item = productsList.filter(item => item.id === parseInt(id));
-        setTimeout(()=>{                           
-            resolve(item[0]);
-        }, 2000);
+        const item = productsList.filter(item => item.id === parseInt(id));                                   
+        resolve(item[0]);
+        
     });
     return promesa;
 }
