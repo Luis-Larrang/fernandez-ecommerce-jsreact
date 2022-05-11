@@ -1,5 +1,5 @@
 .margenTop{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .anchoImg{
     padding-top: 3rem;
@@ -9,3 +9,8 @@
     border-left: solid black 3px;
     height: 90vh;
 }
+
+.botonDeco{
+    border: 2px solid whitesmoke;
+}
+
