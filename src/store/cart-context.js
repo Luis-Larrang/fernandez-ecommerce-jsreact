@@ -7,6 +7,7 @@ const ContenidoDelCarrito = createContext({
     clear: () => {},
     isInCart: () => {},
     getCartQuantity: () => {},
+    getTotalPrice: () => {},
 });
 
 export const CartContextProvider = ({children}) => {
@@ -44,6 +45,12 @@ export const CartContextProvider = ({children}) => {
         }, 0)
     }
 
+    const getTotalPrice = ()=>{
+        return productList.reduce((total, value)=>{
+            return total + value.price*value.quantity
+        },0)
+    }
+
     return (        
         <ContenidoDelCarrito.Provider value = {{
             products: productList,
@@ -52,6 +59,7 @@ export const CartContextProvider = ({children}) => {
             clear,
             isInCart,
             getCartQuantity,
+            getTotalPrice,
         }}> 
         {children}
         </ContenidoDelCarrito.Provider>

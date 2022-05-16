@@ -37,6 +37,3 @@ function ItemCounter({stock, initial, onAdd}) {
 }  
 
 export default ItemCounter;
-
-/*<button type="button" className="btn btn-success margen " onClick={()=>sumarAlCarrito()}><img src={logoMas} alt="logoMas"className="ajusteImgBoton"/></button>
-<button type="button" className="btn btn-danger margen" onClick={()=>restarDelCarrito()}><img src={logoMenos} alt="logoMenos" className="ajusteImgBoton"/></button>*/

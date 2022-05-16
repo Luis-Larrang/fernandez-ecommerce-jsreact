@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./itemListContainer.css"
 import ItemList from "../../components/itemlist/itemlist";
+//import {collection, getDocs, getFirestore} from "firebase/firestore";
 import { useParams } from "react-router-dom";
+
+
+/*useEffect(()=>{
+    const db = getFirestore();
+    const itemCollection = collection(db, "items");
+
+    getDocs(itemCollection).then(snapshot=>{
+        console.log(snapshot.docs.map(doc => 
+            {return {...doc.data(),id: doc.id}}));
+    })
+})
+.catch(
+    err => console.log(err)
+);*/
+
 
 function getProducts(category) {
     const promesa = new Promise((resolve, reject)=>{
