@@ -39,8 +39,8 @@ function ItemDetail({item}) {
                             <Button onClick={()=> console.log(cartContext.getCartQuantity())} className="botonDeco" variant="dark" size="sm">Cantidad en Carrito</Button> 
                         </ButtonGroup>                                               
                         {cartContext.products.length &&                        
-                        <button onClick={()=> console.log(cartContext)} className="">
-                            <Link to="/cart">
+                        <button onClick={()=> console.log(cartContext)} className="ajustarBtn">
+                            <Link to="/cart" className="textDeco">
                                 Finalizar compra ({cartContext.getCartQuantity()} unidades)
                             </Link>
                         </button>

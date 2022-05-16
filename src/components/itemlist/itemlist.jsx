@@ -7,7 +7,7 @@ function ItemList({items}) {
         <Container>
             <Stack direction="horizontal" gap={3}>                       
                 {items.map(item=> <Item item={item} key={item.id} />)}           
-            </Stack> 
+            </Stack>            
         </Container>
     )    
 }

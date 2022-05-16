@@ -13,4 +13,15 @@
 .botonDeco{
     border: 2px solid whitesmoke;
 }
+.ajustarBtn{
+    margin-left: 5rem;
+    margin-top: 2rem;
+    background-color:greenyellow;
+    color:black;
+}
+.textDeco{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
 

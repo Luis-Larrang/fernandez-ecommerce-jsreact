@@ -8,7 +8,7 @@ function getItem(id) {
             {
                 id: 1,
                 title: 'Monitor',
-                price: '$20000',
+                price: 20000,
                 descripcion: "Monitor led 4k.",
                 stock: 3,
                 imageUrl: 'https://img.freepik.com/vector-gratis/monitor-computadora-color-negro-pantalla-color-aislado-sobre-fondo-blanco_175654-383.jpg?w=740'
@@ -16,7 +16,7 @@ function getItem(id) {
               {
                 id: 2,  
                 title: 'Pc  Notebook',
-                price: '$100000',
+                price: 100000,
                 descripcion: "Notebook intel super i9.",
                 stock: 4,
                 imageUrl: 'https://img.freepik.com/psd-gratis/maqueta-vista-frontal-ultrabook_9462-263.jpg?w=826'
@@ -24,7 +24,7 @@ function getItem(id) {
               {
                 id: 3,
                 title: 'Mouse',
-                price: '$3000',
+                price: 3000,
                 descripcion: "Mouse 12.000 dpi.",
                 stock: 20,
                 imageUrl: 'https://img.freepik.com/vector-gratis/raton_24908-54360.jpg?t=st=1651173519~exp=1651174119~hmac=54b437a809d5931604c797a3bf5d4732221a303ffefa52e9fda711228de06dcf&w=360'
