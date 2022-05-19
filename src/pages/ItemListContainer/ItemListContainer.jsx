@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./itemListContainer.css"
 import ItemList from "../../components/itemlist/itemlist";
-//import {collection, getDocs, getFirestore} from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import db from '../../services/firebase';
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 
 /*useEffect(()=>{
@@ -18,7 +19,7 @@ import { useParams } from "react-router-dom";
     err => console.log(err)
 );*/
 
-
+/*
 function getProducts(category) {
     const promesa = new Promise((resolve, reject)=>{
         const productsList = [
@@ -49,17 +50,26 @@ function getProducts(category) {
        
     });
     return promesa;
-}
+}*/
 
 function ItemListContainer() {   
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState();
     const {categoryId} = useParams();
 
+    const getData = async (category) =>{
+        try {          
+          const document = category ? query(collection(db,"items"),where('category','==',category))
+                                    : collection(db,"items")
+          const col = await getDocs(document)
+          const result = col.docs.map((doc) => doc = { id:doc.id,...doc.data()})
+          setProducts(result)          
+        } catch (error) {
+          console.log(error)
+        }
+      }  
+
     useEffect(()=>{       
-        getProducts(categoryId)
-            .then(res =>{              
-                setProducts(res);
-            })
+        getData(categoryId)
     },[categoryId]);
     return (        
         <div>
