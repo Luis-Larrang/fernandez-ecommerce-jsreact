@@ -1,81 +1,42 @@
 import React, { useEffect, useState } from "react";
 import "./itemListContainer.css"
 import ItemList from "../../components/itemlist/itemlist";
-import { useParams } from "react-router-dom";
+import Spinner from '../../components/Spinner/Spinner';
 import db from '../../services/firebase';
+import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 
-/*useEffect(()=>{
-    const db = getFirestore();
-    const itemCollection = collection(db, "items");
+const ItemListContainer = () => {
 
-    getDocs(itemCollection).then(snapshot=>{
-        console.log(snapshot.docs.map(doc => 
-            {return {...doc.data(),id: doc.id}}));
-    })
-})
-.catch(
-    err => console.log(err)
-);*/
-
-/*
-function getProducts(category) {
-    const promesa = new Promise((resolve, reject)=>{
-        const productsList = [
-            {
-                id: 1,
-                title: 'Monitor',
-                price: 20000,                
-                category: "Monitores",
-                imageUrl: 'https://img.freepik.com/vector-gratis/monitor-computadora-color-negro-pantalla-color-aislado-sobre-fondo-blanco_175654-383.jpg?w=740'
-              },
-              {
-                id: 2,
-                title: 'Pc  Notebook',
-                price: 100000,                
-                category: "Computadoras",
-                imageUrl: 'https://img.freepik.com/psd-gratis/maqueta-vista-frontal-ultrabook_9462-263.jpg?w=826'
-              },
-              {
-                id: 3,
-                title: 'Mouse',
-                price: 3000,                
-                category: "Accesorios",
-                imageUrl: 'https://img.freepik.com/vector-gratis/raton_24908-54360.jpg?t=st=1651173519~exp=1651174119~hmac=54b437a809d5931604c797a3bf5d4732221a303ffefa52e9fda711228de06dcf&w=360'
-              }
-        ];
-        const filtroProductos = category ? productsList.filter(p => p.category === category) : productsList;
-        resolve(filtroProductos);
-       
-    });
-    return promesa;
-}*/
-
-function ItemListContainer() {   
-    const [products, setProducts] = useState();
-    const {categoryId} = useParams();
-
+    const { categoryId } = useParams()
+  
+    const [items, setItems] = useState() 
+    const [load, setLoad] = useState(true)
+  
     const getData = async (category) =>{
-        try {          
-          const document = category ? query(collection(db,"items"),where('category','==',category))
-                                    : collection(db,"items")
-          const col = await getDocs(document)
-          const result = col.docs.map((doc) => doc = { id:doc.id,...doc.data()})
-          setProducts(result)          
-        } catch (error) {
-          console.log(error)
-        }
-      }  
-
-    useEffect(()=>{       
-        getData(categoryId)
-    },[categoryId]);
-    return (        
-        <div>
-            <ItemList items={products} />
-        </div>        
+      try {
+        setLoad(true)
+        const document = category ? query(collection(db,"items"),where('category','==',category))
+                                  : collection(db,"items")
+        const col = await getDocs(document)
+        const result = col.docs.map((doc) => doc = { id:doc.id,...doc.data()})
+        setItems(result)
+        setLoad(false)
+      } catch (error) {
+        console.log(error)
+      }
+    }   
+  
+    useEffect(() => {
+      getData(categoryId)
+    }, [categoryId])
+    
+    return (
+      <>
+        {load ? <Spinner /> : <ItemList data={items} />}
+      </>
     );
-}
+  };
 
 export default ItemListContainer;
