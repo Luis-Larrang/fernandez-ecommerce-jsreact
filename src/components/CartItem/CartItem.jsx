@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import CartContext from "../../store/cart-context";
 import { Card, Button } from "react-bootstrap";
 import "./CartItem.css"
+import { Link } from "react-router-dom";
 
 function CartItem({item}) {
     const cartContext = useContext(CartContext);
@@ -14,7 +15,7 @@ function CartItem({item}) {
                 <Card.Text>
                    $ {item?.price}
                 </Card.Text>
-                <Button variant="danger" onClick={()=>cartContext.removeProduct(item.id)}>Eliminar</Button>
+                <Button variant="danger" onClick={()=>cartContext.removeProduct(item.id)}>Eliminar</Button>                               
             </Card.Body>
             <Card.Footer className="text-muted">
                 Cantidad: {item?.quantity}

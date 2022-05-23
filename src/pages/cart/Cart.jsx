@@ -16,9 +16,7 @@ function Cart() {
                 <p>
                     Precio total: ${cartContext.getTotalPrice()}
                 </p>
-                <button>
-                    Terminar compra
-                </button>
+                <Link to="/checkout"><button variant="info">Finalizar compra</button></Link> 
             </div>:
             <div className="centrar">
                 <h2 >No hay productos en el carrito</h2>
