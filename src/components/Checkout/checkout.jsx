@@ -1,14 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { CartContextProvider } from '../../store/cart-context';
 import Spinner from '../Spinner/Spinner';
 import db from '../../services/firebase';
 import { collection, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
+import CartContext from "../../store/cart-context";
 
 const Checkout = () => {
-    const productList = useContext(CartContextProvider);
-    const getTotalPrice = useContext(CartContextProvider);
-    const clear = useContext(CartContextProvider);
+    const cartContext= useContext(CartContext);    
 
     const [load, setLoad] = useState(false)
     const [orderID, setOrderID] = useState()
@@ -32,7 +30,7 @@ const Checkout = () => {
             const col = collection(db,"Orders")
             const order = await addDoc(col,data) 
             setOrderID(order.id)
-            clear()
+            cartContext.clear()
             setLoad(false)
         } catch (err) {
             console.log(err)
@@ -41,21 +39,16 @@ const Checkout = () => {
     
     const handleSubmit = (e) =>{
         e.preventDefault()
-        const dia = new Date();
-        console.log("buyer", buyer);
-        console.log("dia", dia);
-        const items= productList.map(e=>{return{id:e.id,title:e.title,price:e.price,quantity:e.quantity}})
-        console.log(items);
-        console.log("productList", productList);
-        const total = getTotalPrice();
-        console.log("total", total);
+        const dia = new Date();        
+        const items= cartContext.products.map(e=>{return{id:e.id,title:e.title,price:e.price,quantity:e.quantity}})       
+        const total = cartContext.getTotalPrice();        
         const data= {buyer,items,dia,total}
         console.log("data", data);
+        generateOrder(data);
     };
   return (
     <>
-    <h1></h1>
-    <h4></h4>
+    <h3>Ingresa tus datos para finalizar la compra:</h3>
     {load?<Spinner/>
     :(!orderID && <div>
         <form onSubmit={handleSubmit}>
@@ -70,8 +63,8 @@ const Checkout = () => {
        <div>{orderID &&(
            <div>
                <h4>Compra exitosa</h4>
-               <h3>{`Su numero de pedido es: {orderID}`}</h3>
-               <Link to="/"><button className='btn btn-success' value="Seguir comprando" type="btn"></button></Link>
+               <h3>{`Su numero de pedido es: ${orderID}`}</h3>
+               <Link to="/"><button className='btn btn-success' value="Seguir comprando" type="btn">Seguir comprando</button></Link>
            </div>
        )}</div> 
     
