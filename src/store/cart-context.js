@@ -67,3 +67,75 @@ export const CartContextProvider = ({children}) => {
 
 export default ContenidoDelCarrito;
 
+
+/*import React, { createContext, useState } from 'react';
+
+const ContenidoDelCarrito = createContext({
+    products: [],
+    addProduct: () => {},
+    removeProduct: () => {},
+    clear: () => {},
+    isInCart: () => {},
+    getCartQuantity: () => {},
+    getTotalPrice: () => {},
+});
+
+const CartContextProvider = ({ children }) => {
+
+    const [productList, setProductList] = useState([]);
+
+    const addProduct = (products, quantity) => {
+        let itemQuantity = { ...products, quantity };
+        if (!isInCart(products.id)) {
+            setProductList([...productList, itemQuantity]);
+        } else {
+            
+            const newProducts = productList.map(prod => {
+                if(prod.id === products.id) {
+                    const newProduct = {
+                        ...prod,
+                        quantity: prod.quantity + quantity
+                    }
+                    return newProduct
+                } else {
+                    return prod
+                }
+            })
+
+            setProductList(newProducts)
+        }
+    };
+    
+
+    const removeProduct = (id) => {
+        setProductList( productList.filter((products) => products.id !== id));
+    };
+
+    const clear = () => {
+        setProductList([]);
+    };
+
+    const isInCart = (id) => {
+        return productList.some((e) => e.id === id);
+    };
+
+    const getCartQuantity = () => {
+        let cant = 0
+        productList.forEach((e) => cant += e.quantity)
+        return cant
+    };
+    
+    const getTotalPrice = () => {
+        let total = 0
+        productList.forEach((e) => total += (e.quantity*e.price))
+        return total        
+    };
+
+    return (
+        <ContenidoDelCarrito.Provider defaultvalue={{ productList, addProduct, removeProduct, clear, isInCart,getCartQuantity, getTotalPrice }}>
+            {children}
+        </ContenidoDelCarrito.Provider>
+    );
+};
+
+export default CartContextProvider*/

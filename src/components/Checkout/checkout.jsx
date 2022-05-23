@@ -1,8 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { CartContextProvider } from '../../store/cart-context';
+import Spinner from '../Spinner/Spinner';
+import db from '../../services/firebase';
+import { collection, addDoc } from "firebase/firestore";
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
-    const {productList, getTotalPrice} = useContext(CartContextProvider)
+    const productList = useContext(CartContextProvider);
+    const getTotalPrice = useContext(CartContextProvider);
+    const clear = useContext(CartContextProvider);
+
+    const [load, setLoad] = useState(false)
+    const [orderID, setOrderID] = useState()
     
     const [buyer, setBuyer] = useState({
         Nombre:"",
@@ -16,26 +25,57 @@ const Checkout = () => {
             [e.target.name] : e.target.value
         }))
     };
+
+    const generateOrder= async(data)=>{
+        setLoad(true)
+        try {
+            const col = collection(db,"Orders")
+            const order = await addDoc(col,data) 
+            setOrderID(order.id)
+            clear()
+            setLoad(false)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    
     const handleSubmit = (e) =>{
         e.preventDefault()
-
+        const dia = new Date();
         console.log("buyer", buyer);
+        console.log("dia", dia);
         const items= productList.map(e=>{return{id:e.id,title:e.title,price:e.price,quantity:e.quantity}})
         console.log(items);
         console.log("productList", productList);
-        const total = getTotalPrice()
+        const total = getTotalPrice();
         console.log("total", total);
+        const data= {buyer,items,dia,total}
+        console.log("data", data);
     };
   return (
     <>
     <h1></h1>
     <h4></h4>
-    <form onSubmit={handleSubmit}>
-        <input type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange}/>
-        <input type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange}/>
-        <input type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange}/>
-        <input type="submit" value="Finalizar compra" className='btn btn-success'/>
-    </form>
+    {load?<Spinner/>
+    :(!orderID && <div>
+        <form onSubmit={handleSubmit}>
+            <input type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange} required/>
+            <input type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange} required/>
+            <input type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange} required/>
+            <input type="submit" value="Finalizar compra" className='btn btn-success'/>
+        </form>
+    </div>)
+    }
+    
+       <div>{orderID &&(
+           <div>
+               <h4>Compra exitosa</h4>
+               <h3>{`Su numero de pedido es: {orderID}`}</h3>
+               <Link to="/"><button className='btn btn-success' value="Seguir comprando" type="btn"></button></Link>
+           </div>
+       )}</div> 
+    
+    
     </>
   )
 }
