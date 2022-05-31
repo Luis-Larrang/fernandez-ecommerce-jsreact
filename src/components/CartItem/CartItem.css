@@ -3,13 +3,13 @@
     width: 20%;
 }
 
-.centrado{
+.centradoB{
     margin-left: 37%;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
 }

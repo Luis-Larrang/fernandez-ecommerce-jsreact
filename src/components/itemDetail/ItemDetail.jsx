@@ -14,7 +14,7 @@ function ItemDetail({item}) {
     }    
     
     return (
-        <Container>
+        <Container className="margenTop">
             <Row className="justify-content-md-center">
                 <Col>
                 <img src={item?.imageUrl} alt="img producto" className="anchoImg offset-4"/>
@@ -31,13 +31,6 @@ function ItemDetail({item}) {
                     </p>
                     <div className="offset-1 margenTop col-6">
                         <ItemCounter initial={0} stock={item.stock} onAdd={addHandler}/>
-                        <ButtonGroup aria-label="Basic example" className=" mt-3 ms-4">
-                            <Button onClick={()=> console.log(cartContext.products)} className="botonDeco" variant="dark" size="sm">Imprimir Carrito</Button>
-                            <Button onClick={()=> cartContext.removeProduct(item.id)} className="botonDeco" variant="dark" size="sm">Sacar del Carrito</Button>
-                            <Button onClick={()=> cartContext.clear()} className="botonDeco" variant="dark" size="sm">Limpiar Carrito</Button>
-                            <Button onClick={()=> console.log(cartContext.isInCart(item.id))} className="botonDeco" variant="dark" size="sm">En Carrito</Button>
-                            <Button onClick={()=> console.log(cartContext.getCartQuantity())} className="botonDeco" variant="dark" size="sm">Cantidad en Carrito</Button> 
-                        </ButtonGroup>                                               
                         {cartContext.products.length &&                        
                         <button onClick={()=> console.log(cartContext)} className="ajustarBtn">
                             <Link to="/cart" className="textDeco">

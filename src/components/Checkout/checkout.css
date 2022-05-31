@@ -1,0 +1,29 @@
+.centrado{
+    margin-left: 0%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+.formulario{
+    margin-left: 0%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+.formulario input{
+    margin-bottom: 1.5rem;
+}
+.botonSc{
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: 15rem;
+    margin-top: 3rem;
+}

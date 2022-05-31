@@ -4,6 +4,7 @@ import db from '../../services/firebase';
 import { collection, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 import CartContext from "../../store/cart-context";
+import "./checkout.css"
 
 const Checkout = () => {
     const cartContext= useContext(CartContext);    
@@ -47,30 +48,37 @@ const Checkout = () => {
         generateOrder(data);
     };
   return (
-    <>
-    <h3>Ingresa tus datos para finalizar la compra:</h3>
+    <div className="centrado">    
     {load?<Spinner/>
     :(!orderID && <div>
-        <form onSubmit={handleSubmit}>
+        <h3>Ingresa tus datos para finalizar la compra:</h3>
+        <form onSubmit={handleSubmit} className="formulario">
             <input type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange} required/>
             <input type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange} required/>
             <input type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange} required/>
             <input type="submit" value="Finalizar compra" className='btn btn-success'/>
-        </form>
+        </form>       
     </div>)
-    }
-    
-       <div>{orderID &&(
+    }    
+       <div className="centrado">{orderID &&(
            <div>
                <h4>Compra exitosa</h4>
                <h3>{`Su numero de pedido es: ${orderID}`}</h3>
-               <Link to="/"><button className='btn btn-success' value="Seguir comprando" type="btn">Seguir comprando</button></Link>
+               <Link to="/"><button className='btn btn-success botonSc' value="Seguir comprando" type="btn">Seguir comprando</button></Link>
            </div>
        )}</div> 
     
     
-    </>
+    </div>
   )
 }
 
 export default Checkout;
+
+
+/*<form onSubmit={handleSubmit}>
+<input type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange} required/>
+<input type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange} required/>
+<input type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange} required/>
+<input type="submit" value="Finalizar compra" className='btn btn-success'/>
+</form>*/

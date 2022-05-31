@@ -8,7 +8,7 @@ function CartItem({item}) {
     const cartContext = useContext(CartContext);
 
     return(
-        <Card className="text-center centrado" border="success" style={{ width: '25rem' }}>            
+        <Card className="text-center centradoB" border="success" style={{ width: '25rem' }}>            
             <Card.Body>
                 <img src={item?.imageUrl} alt="img producto" className="ajusteImg"  />
                 <Card.Title>{item?.title}</Card.Title>

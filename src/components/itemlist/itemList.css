@@ -1,0 +1,7 @@
+.distribucion{
+    margin-left: 2rem; 
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;    
+    margin-bottom: 5rem;      
+}

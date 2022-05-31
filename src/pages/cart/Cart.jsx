@@ -12,17 +12,15 @@ function Cart() {
         <div> 
             {cartContext.products.map(p=> <CartItem item={p} key={p.id} />)}
             {cartContext.products.length !== 0 ?
-            <div className="centrar">
+            <div className="centrarA">
                 <p>
                     Precio total: ${cartContext.getTotalPrice()}
                 </p>
-                <Link to="/checkout"><button variant="info">Finalizar compra</button></Link> 
+                <Link to="/checkout"><button variant="info" className="botonA btn btn-success">Finalizar compra</button></Link> 
             </div>:
-            <div className="centrar">
-                <h2 >No hay productos en el carrito</h2>
-                <button href="/">
-                    <Link to="/">Inicio</Link>
-                </button>
+            <div className="centrarA">
+                <h2 >No hay productos en el carrito</h2>                
+                    <Link to="/"><button href="/" className="btn btn-info botonB">Inicio</button></Link>                
             </div>}
         </div>       
     )

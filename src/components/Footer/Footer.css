@@ -1,0 +1,13 @@
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(173, 127, 181);    
+    justify-content: space-around;
+    display: flex;
+    margin-top: 1rem;
+}
+.footer p{
+    margin-top: 0.5rem;
+}
