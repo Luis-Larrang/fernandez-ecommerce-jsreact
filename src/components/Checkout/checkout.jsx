@@ -53,10 +53,10 @@ const Checkout = () => {
     :(!orderID && <div>
         <h3>Ingresa tus datos para finalizar la compra:</h3>
         <form onSubmit={handleSubmit} className="formulario">
-            <input type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange} required/>
-            <input type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange} required/>
-            <input type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange} required/>
-            <input type="submit" value="Finalizar compra" className='btn btn-success'/>
+            <input className='deco' type="text" name="Nombre" placeholder='Nombre' value={Nombre} onChange={handleInputChange} required/>
+            <input className='deco' type="number" name="Telefono" placeholder='Telefono' value={Telefono} onChange={handleInputChange} required/>
+            <input className='deco' type="email" name="Email" placeholder='Email' value={Email} onChange={handleInputChange} required/>
+            <input  type="submit" value="Finalizar compra" className='btn btn-success'/>
         </form>       
     </div>)
     }    

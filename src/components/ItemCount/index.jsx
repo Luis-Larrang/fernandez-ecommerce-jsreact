@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import logoMas from "./plus.png"
-import logoMenos from "./minus-button.png"
+import logoMas from "../../Assets/plus.png"
+import logoMenos from "../../Assets/minus-button.png"
 import "./itemCount.css"
 import {ButtonGroup, Button} from "react-bootstrap"
 
@@ -30,7 +30,7 @@ function ItemCounter({stock, initial, onAdd}) {
                         </Button>
                     </ButtonGroup>                   
                 </div>
-                <button className="offset-4 margenAgregar" onClick={()=>(count <= stock) && onAdd(count)}>Agregar al carrito</button>
+                <button className=" margenAgregar btn btn-info" onClick={()=>(count <= stock) && onAdd(count)}>Agregar al carrito</button>
             </div>                            
         </>
     );

@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
-import carrito from "./carrito.png"
+import carrito from "../../Assets/carrito.png"
 import { Badge } from "react-bootstrap";
 import CartContext from "../../store/cart-context";
 import { Link } from "react-router-dom";
-import "./cartWidget.css"
 
 const CartWidget = () => {
     const cartContext = useContext(CartContext);

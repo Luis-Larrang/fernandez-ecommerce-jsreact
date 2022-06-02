@@ -46,3 +46,7 @@
     margin-right: 3rem;
     margin-top: 0.1rem;
 }
+
+img:hover{
+    transform: scale(1.1);
+}

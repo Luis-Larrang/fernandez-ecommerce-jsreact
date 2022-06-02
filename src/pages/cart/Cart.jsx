@@ -13,7 +13,7 @@ function Cart() {
             {cartContext.products.map(p=> <CartItem item={p} key={p.id} />)}
             {cartContext.products.length !== 0 ?
             <div className="centrarA">
-                <p>
+                <p className="estiloTotal">
                     Precio total: ${cartContext.getTotalPrice()}
                 </p>
                 <Link to="/checkout"><button variant="info" className="botonA btn btn-success">Finalizar compra</button></Link> 
