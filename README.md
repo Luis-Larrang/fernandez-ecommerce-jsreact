@@ -47,6 +47,14 @@ Una vez todas las dependecnias esten instaladas es posible iniciar la App median
 
     Dentro de los componentes “ItemListContainer” e “ItemDetailContainer” se trabajó utilizando la función “getProducts()” y “getItem()” con promesas y filtros los cuales son usados por la función “ItemListContainer()” e “ItemDetailContainer()”, que incluyen la función useState de react, para poder reflejar los items deseados en el dom. En el primer caso utilizando “category” como referencia y en el segundo “id”.
 
+  ### cart-context
+
+    Para la creación de cart context se utilizo create context de react.
+
+  ### Datos de productos.
+
+    Los mismos fueron cargados a firebase. siendo esta la herramienta explicada durante la cursada, a futuro puede ser reemplazada con herramientas mas convenientes en la carga de información. Esta misma base de datos permite gerar las ordenes de compra con un id generado automaticamente para ser integrado a futuro con un sistema de pago y envio.    
+
 ## Autor
 
   - **Luis Fernandez** - *Desarrollo integral de la App* -
